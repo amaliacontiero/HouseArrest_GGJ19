@@ -1,0 +1,59 @@
+Converting GML script: ${project_dir}\scripts\room_goto_transition\room_goto_transition.gml
+Converted description /// @description room_goto_transition(room, transition, [steps]);/// @param room
+/// @param  transition
+/// @param  [steps]
+
+!!! Font fnt_gui uses a font (Kimberley Bl) not installed on this system - Font has NOT been regenerated
+Converting GML script: ${project_dir}\objects\obj_controller\Create_0.gml
+Converted description /// @description  Initialize variables
+
+Converting GML script: ${project_dir}\objects\obj_controller\Step_0.gml
+Converted description /// @description  Check if any keys are being pressed
+
+Converting GML script: ${project_dir}\objects\obj_controller\Other_10.gml
+Converted description /// @description  Define which transition is currently being used
+
+Converting GML script: ${project_dir}\objects\obj_controller\Draw_64.gml
+Converted description /// @description  Draw GUI for the demo
+
+Converting GML script: ${project_dir}\objects\sys_transition\Create_0.gml
+Converted builtin - line 33: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 33: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 32: view_hport[0] -> __view_get( e__VW.HPort, 0 )
+Converted description /// @description  Initialize Variables
+
+Converting GML script: ${project_dir}\objects\sys_transition\Destroy_0.gml
+Converted description /// @description  Delete surfaces
+
+Converting GML script: ${project_dir}\objects\sys_transition\Alarm_0.gml
+Converted builtin - line 5: view_xport[0] -> __view_get( e__VW.XPort, 0 )
+Converted builtin - line 18: view_xport[0] -> __view_get( e__VW.XPort, 0 )
+Converted builtin - line 6: view_yport[0] -> __view_get( e__VW.YPort, 0 )
+Converted builtin - line 19: view_yport[0] -> __view_get( e__VW.YPort, 0 )
+Converted builtin - line 7: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 20: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 8: view_hport[0] -> __view_get( e__VW.HPort, 0 )
+Converted builtin - line 21: view_hport[0] -> __view_get( e__VW.HPort, 0 )
+Converted description /// @description  Stripe Effect - Finish array and start animation
+
+Converting GML script: ${project_dir}\objects\sys_transition\Step_1.gml
+Converted builtin - line 31: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 37: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted description /// @description  Timer increase
+
+Converting GML script: ${project_dir}\objects\sys_transition\Other_10.gml
+Converted description /// @description  Change room (Fade Transition)/// @param Fade Transition
+
+Converting GML script: ${project_dir}\objects\sys_transition\Draw_75.gml
+Converted description /// @description  Update surfaces for Slide transition
+
+Converting GML script: ${project_dir}\objects\sys_transition\Draw_64.gml
+Converted builtin - line 15: view_xport[0] -> __view_get( e__VW.XPort, 0 )
+Converted builtin - line 16: view_yport[0] -> __view_get( e__VW.YPort, 0 )
+Converted builtin - line 17: view_wport[0] -> __view_get( e__VW.WPort, 0 )
+Converted builtin - line 18: view_hport[0] -> __view_get( e__VW.HPort, 0 )
+Converted description /// @description  Draw Transitions
+
+Added compatibility script 'draw/draw_enable_alphablend.gml'
+Added compatibility script 'draw/draw_set_colour_write_enable.gml'
+Updated compatibility script '__global_object_depths.gml'

@@ -1,0 +1,98 @@
+[Update Log]
+
+[Version 1.0.3]
+
+- Added TweenScript() and TweenMoreScript() for scheduling script calls
+    * Using the tweening system, these scripts return a regular tween id
+    * Can be used together with TweenMore() for more intricate sequence control
+
+- Updated TGMS_ExecuteEvent() to support more callback arguments
+    * Allows for TweenMore() to support up to 10 properties
+    * Increases max number of arguments that can be passed to TweenAddCallback()
+
+- Updated Demo Project
+    * Added tween sequence example
+    * Updated various examples
+
+- Added document to clarify which scripts can be safely deleted
+
+
+[Version 1.0.2]
+
+- Added TweenMore() script for chaining tweens
+- Added TweenDefine() for defining or redefining tweens
+- Documentation tweaks 
+
+
+[Version 1.0.1]
+
+- Fixed crash related to TweensTarget() selection script
+- Added missing platform targets
+
+
+[Version 1.0.0]
+
+- Official Launch
+
+
+[Key Changes From v0.9.7 To v1.0.0]
+
+- Property setter scripts are no longer required.
+
+- TweenSimple*() scripts have been changed to TweenEasy*() variants and now support an optional [mode] argument.
+
+- TweenFire, TweenCreate, TweenPlay have all been overhauled and are NOT backwards compatible.
+  * They now support multiple properties in a single tween
+  * TweenFire has To/From variants which make use of new property getters
+  * They now support "x"/"y"/"etc" stringed properties instead of x__/y__ script names.
+	Example:
+		TweenFire(id, EaseLinear, 0, true, 0, 1, "x", x, mouse_x, "y", y, mouse_y);
+	
+		// You can use up to 10 properties with a single tween call
+		TweenFireTo(id, EaseLinear, 0, true, 0, 1,
+							  "x", mouse_x,
+						          "y", mouse_y,
+							  "image_angle", 360,
+							  "image_scale", 2.0)
+
+		
+- TweenSet() and TweenGet() have replaced the various TweenGet*() and TweenSet*() scripts.
+  * They now receive string labels for modifying the appropriate tween setting.
+  * Please open and read the respective TweenGet() and TweenSet() scripts to find all supported string labels.
+	e.g.
+		TweenSet(tween, "time_scale", 0.5);
+		TweenSet(tween, "duration", 3.0);
+		destination = TweenGet(tween, "destination");
+
+- Tweens(), TweensAll(), TweensGroup, and TweensTarget() have replaced the *All, *Group, *Target script variants.
+  * Any script with the tween[s] argument supports them
+	e.g.
+		TweenPause(TweensAll());
+		TweenDestroy(TweensGroup(5));
+		TweenResume(TweensTarget(id));
+		TweenReverse(TweensTarget(obj_Player));
+
+  	* TweensAll() has a shorthand version using the keyword [all]
+	e.g.
+		TweenResume(all);
+
+- User Events can now be used as property setters/getters using the TPUser() property script
+  with TWEEN_USER_TARGET and TWEEN_USER_VALUE macros. 
+	e.g.
+		// Some Event
+		TweenFire(id, EaseLinear, 0, false, 0, 1, TPUser(0), 0, 100);
+
+		// User Event 0
+		TWEEN_USER_TARGET.someVariable = TWEEN_USER_VALUE;
+  
+  * Here is a quick example showing how to set up a getter/setter version to support TweenFireTo/From()
+	e.g.
+		// User Event 0
+		if (TWEEN_USER_GET)
+		{   // Getter
+		    TWEEN_USER_GET = TWEEN_USER_TARGET.someVariable;
+		}
+		else
+		{   // Setter
+		    TWEEN_USER_TARGET.coolVariable = TWEEN_USER_VALUE;
+		}
